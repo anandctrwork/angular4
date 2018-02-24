@@ -1,0 +1,35 @@
+<div>
+    <div class="panel-header">
+        <h4 [ngClass]="{'red': hasDisplay}">{{"Product List" | lowercase}}</h4>
+        <h4 [ngStyle]="{'color':p_color, 'font-size':p_size}">------------{{123456.45678 | number:'3.2-3'}}---------------</h4>
+        <h4 [ngStyle]="{'color': 'blue', 'font-size':p_size}">------------{{123456 | currency:'USD':true:'3.2-3'}}---------------</h4>
+        <h4 [ngStyle]="{'color': 'red', 'font-size':p_size}">------------{{0.8923 | percent:'1.2-2'}}---------------</h4>
+        <h4 [ngStyle]="{'color': 'black', 'font-size':p_size}">------------{{'Hello World' | slice:0:5}}---------------</h4>
+        <h4 [ngStyle]="{'color': 'blue', 'font-size':p_size}">------------{{p_date | date:'MM/dd/yyyy hh:mm:ss Z a'}}---------------</h4>
+        <h4 [ngStyle]="{'color': 'blue', 'font-size':p_size}">------------{{p_date | date:'MM/dd/yyyy HH:mm:ss Z a'}}---------------</h4>
+        <h4 [ngStyle]="{'color': 'blue', 'font-size':p_size}">------------{{p_date | date:'shortDate'}}---------------</h4>
+        <h4 [ngStyle]="{'color': 'blue', 'font-size':p_size}">------------{{p_date | date:'longDate'}}---------------</h4>
+        <h4 [ngStyle]="{'color': 'blue', 'font-size':p_size}">------------{{p_date | date:'fullDate'}}---------------</h4>
+
+        <h4 [ngStyle]="{'color': 'orange', 'font-size':p_size}">------------{{123456789 | cardsanitize}}---------------</h4>
+
+    </div>
+    <div class="panel-body">
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Price</th>
+            </thead>
+            <tbody>
+            <tr *ngFor="let prod of products | slice:2:4">
+                <td>{{prod.Id}}</td>
+                <td>{{prod.Description}}</td>
+                <td>{{prod.Category}}</td>
+                <td>{{prod.Price}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
